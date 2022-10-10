@@ -1,10 +1,6 @@
 import React from 'react';
-import DictionaryEffect from './Dictionary';
+import ExampleEffect from './ExampleEffect';
 
 export default function AtomEffects() {
-  return (
-    <>
-      <DictionaryEffect />
-    </>
-  );
+  return <ExampleEffect />;
 }
