@@ -1,0 +1,90 @@
+.list--routes {
+  margin: 20px 0 20px 10px;
+
+  &-wrap {
+    margin: 10px 0;
+    padding: 0 10px;
+  }
+
+  & li {
+    margin: 0 0 0 -11px;
+    padding: 24px 20px 24px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    border-left: 2px solid #f3f3f3;
+
+    & h4 {
+      margin: 0;
+    }
+
+    &::before {
+      min-width: 20px;
+      height: 20px;
+      margin: 0 12px 0 -11px;
+      background-image: url('/public/Images/ListMarkers/StepGray.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      content: '';
+    }
+
+    &:first-child {
+      height: 20px;
+      padding: 0 0 24px;
+
+      &::after {
+        width: 20px;
+        height: auto;
+        background: $white;
+        content: '';
+      }
+
+      &::before {
+        background-image: url('/public/Images/ListMarkers/StepColored.svg');
+      }
+    }
+
+    &:last-child {
+      height: 20px;
+      padding: 24px 0 0;
+    }
+  }
+
+  &-expanded {
+    & li {
+      &:last-child {
+        &::before {
+          background-image: url('/public/Images/ListMarkers/StepColored2.svg');
+        }
+      }
+    }
+  }
+}
+
+.list--routes-button {
+  justify-content: flex-start;
+  margin: 0 0 0 -11px;
+  padding: 0 3px;
+  color: $black;
+  background: transparent;
+  transition: 0.3s;
+
+  & p {
+    margin: 0 10px;
+  }
+
+  & svg {
+    margin: 0;
+    transition: 0.3s;
+  }
+
+  &--expand {
+    & svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover {
+    background: transparent;
+  }
+}

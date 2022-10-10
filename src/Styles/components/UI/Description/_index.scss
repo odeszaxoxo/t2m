@@ -1,0 +1,46 @@
+.description {
+  margin: 0;
+  margin: 16px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.15;
+
+  &--xs {
+    font-size: 12px;
+  }
+
+  &--s {
+    font-size: 14px;
+  }
+
+  &--m {
+    font-size: 15px;
+  }
+
+  &--l {
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  &--gray {
+    color: $gray;
+  }
+}
+
+.description--margin {
+  &--l {
+    margin: 40px 0;
+  }
+
+  &--m {
+    margin: 24px 0;
+  }
+
+  &--s {
+    margin: 12px 0;
+  }
+
+  &--xs {
+    margin: 10px 0;
+  }
+}

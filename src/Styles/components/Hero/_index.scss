@@ -1,0 +1,95 @@
+.hero {
+  &--home {
+    @extend %hero-home;
+  }
+
+  & img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__image {
+    position: relative;
+    margin-right: -$section-padding;
+    margin-left: -$section-padding;
+    overflow: hidden;
+
+    &::after {
+      position: absolute;
+      bottom: -455px;
+      left: -60px;
+      width: 490px;
+      height: 490px;
+      background: $white;
+      border-radius: 100px;
+      transform: rotate(15deg);
+      content: '';
+    }
+  }
+
+  &__content {
+    margin: 0;
+
+    %hero-home & {
+      width: 207px;
+    }
+
+    & h2 {
+      margin: 0 0 16px;
+    }
+
+    & button {
+      width: 207px;
+      height: 48px;
+    }
+  }
+
+  @include media-breakpoint-up(desktop) {
+    position: relative;
+    height: 500px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: right;
+    }
+
+    &__image {
+      height: 100%;
+      margin: 0;
+      background:
+        radial-gradient(
+          49.55% 104.09% at 62.27% 58.9%,
+          #e4e4e4 0%,
+          #c9cac9 100%
+        );
+      border-radius: 112px 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__content {
+      position: absolute;
+      bottom: 60px;
+      left: 60px;
+
+      %hero-home & {
+        width: 400px;
+      }
+
+      & h2 {
+        margin: 0 0 30px;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+      }
+    }
+
+    &--shop {
+      height: 350px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.button__custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  padding: 0 40px;
+  color: $white;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: Golos, serif;
+  line-height: 16px;
+  text-decoration: none;
+  background-color: $black;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  & svg {
+    margin: 0 10px;
+    fill: $white;
+  }
+
+  &:hover {
+    background-color: $gray-500;
+  }
+
+  &:active {
+    background-color: $black;
+  }
+
+  &:disabled {
+    background-color: $gray-300;
+    cursor: default;
+  }
+
+  @include media-breakpoint-up(tablet) {
+    height: 48px;
+  }
+}
+
+$buttonSocial-size: 40px;
+
+.button-social {
+  width: $buttonSocial-size;
+  height: $buttonSocial-size;
+  padding: 0;
+  background-color: $gray-200;
+
+  & + & {
+    margin-left: 20px;
+  }
+}

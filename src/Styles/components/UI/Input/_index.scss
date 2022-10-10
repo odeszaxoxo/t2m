@@ -1,0 +1,67 @@
+$input-padding: 16px;
+$input-height: 56px;
+
+.input {
+  @extend %input;
+  box-sizing: border-box;
+  height: $input-height;
+  padding: $input-padding;
+  color: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: $gray-100;
+  border: 1px solid $gray-250;
+  border-radius: 12px;
+
+  &--filled {
+    @extend %inputFilled;
+  }
+
+  &--labeled,
+  &--filled {
+    padding: 26px $input-padding 6px;
+  }
+
+  &::placeholder {
+    color: $gray-400;
+  }
+
+  &:focus {
+    border-color: $gray-300;
+  }
+
+  %formField-error & {
+    background-color: $red-100;
+    border-color: $red-200;
+
+    &:focus {
+      border-color: $red;
+    }
+
+    &::placeholder {
+      color: $red;
+    }
+  }
+}
+
+.input-label {
+  position: absolute;
+  top: #{$input-height / 2};
+  left: $input-padding;
+  font-size: 16px;
+  transform: translateY(-50%);
+  transition: transform $UITransitionDefault, font-size $UITransitionDefault,
+    top $UITransitionDefault;
+
+  %input:focus + &,
+  %inputFilled + & {
+    top: 6px;
+    font-size: 12px;
+    transform: translateY(0%);
+  }
+
+  %formField-error & {
+    color: $red;
+    opacity: 0.6;
+  }
+}

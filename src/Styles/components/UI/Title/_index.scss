@@ -1,0 +1,63 @@
+.title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 25px;
+
+  &--xs {
+    font-size: 16px;
+  }
+
+  &--s {
+    font-size: 18px;
+  }
+
+  &--sm {
+    font-size: 20px;
+  }
+
+  &--m {
+    font-size: 22px;
+  }
+
+  &--l {
+    font-size: 24px;
+  }
+
+  &--xl {
+    font-size: 30px;
+  }
+
+  &--gray {
+    color: $gray;
+  }
+}
+
+.title--margin {
+  &--l {
+    margin: 48px 0;
+  }
+
+  &--m {
+    margin: 24px 0;
+  }
+
+  &--sm {
+    margin: 16px 0;
+  }
+
+  &--s {
+    margin: 12px 0;
+  }
+
+  &--xs {
+    margin: 10px 0;
+  }
+}
+
+.title--left {
+  text-align: left;
+}
+
+.title--center {
+  text-align: center;
+}

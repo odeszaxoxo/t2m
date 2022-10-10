@@ -1,0 +1,75 @@
+.home__success {
+  padding: 0 20px;
+
+  & h3 {
+    margin: 0 0 8px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  & h4 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+
+    &:first-child {
+      font-weight: 500;
+    }
+
+    &:last-child {
+      margin: 0 0 32px;
+      font-weight: 400;
+    }
+  }
+
+  & img {
+    width: 100%;
+    margin: 24px 0;
+  }
+
+  @include media-breakpoint-up(desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+
+    & h2 {
+      width: 100%;
+      margin: 0 0 48px;
+    }
+
+    & h3 {
+      margin: 0 0 24px;
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    & h4 {
+      line-height: 22px;
+
+      &:first-child {
+        font-size: 15px;
+      }
+
+      &:last-child {
+        margin: 0;
+        font-size: 16px;
+      }
+    }
+
+    & img {
+      width: 526px;
+      margin: 0;
+    }
+
+    & button {
+      display: none;
+    }
+
+    &-description {
+      width: 526px;
+      margin: 10px 0 0;
+    }
+  }
+}
