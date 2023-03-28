@@ -7,13 +7,17 @@ $white: $white-500;
 
 // Black
 
+$black-700: #4b3e38;
 $black-800: #2a2a2a;
 $black-900: #121212;
 
-$black: $black-900;
+$black: $black-700;
 
 // Gray
 
+$gray-100: #fbf9f7;
+$gray-200: #b5aca6;
+$gray-300: #cac4c2;
 $gray-500: #414141;
 
 $gray: $gray-500;
@@ -29,9 +33,25 @@ $red-200: #e7b5b5;
 $red-400: #ed0e00;
 $red-500: #ad0000;
 
-$red: $red-500;
+$red: $red-400;
 
 // Green
 
 $green-100: #44adb8;
 $green-200: #eaf7eb;
+$green-500: #89daa0;
+
+$green: $green-500;
+
+// Pink
+
+$pink-100: #f7f2ed;
+$pink-400: #f6f2ee;
+$pink-500: #ffbdac;
+$pink-700: #fc9f9c;
+
+$pink: $pink-500;
+
+// Blue
+
+$blue: #4f65fc;

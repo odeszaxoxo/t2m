@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 interface IErrorData {
   error?: string;
-  details?: { message?: string; type: string };
+  details?: { [key: string]: string };
 }
 
 interface IError {
@@ -46,8 +46,11 @@ export default function useAPIError(methods: IUseApiErrorProps | null = null) {
       error.data?.error === 'Validation errors' &&
       methods?.setError
     ) {
-      Object.entries(error.data.details).forEach(([key, errorText]) => {
-        methods?.setError?.(key, { type: 'manual', message: errorText });
+      Object.entries(error.data.details as any).forEach(([key, errorText]) => {
+        methods?.setError?.(key, {
+          type: 'manual',
+          message: errorText as string,
+        });
       });
     } else if (error.status === 404) {
       navigate('/404');

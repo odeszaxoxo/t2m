@@ -21,7 +21,7 @@ class API_ERROR extends Error {
   }
 }
 
-async function get(url: any, params = {}, options = {}) {
+async function get(url: string, params = {}, options = {}) {
   let response;
   try {
     response = await fetch(
@@ -41,8 +41,8 @@ async function get(url: any, params = {}, options = {}) {
     return data;
   }
 
-  const { status }: object | undefined = response;
-  const data = await response.json();
+  const status = response?.status;
+  const data = await response?.json();
 
   throw new API_ERROR({ message: data.error, status, data });
 }
@@ -51,12 +51,21 @@ async function post(
   url: RequestInfo | URL,
   body: object,
   options = {},
-  method = 'post',
-  paramsOptions = {}
+  method = 'post'
 ) {
-  const response = await fetch(url, {
+  const requestHeaders = new Headers();
+  requestHeaders.append('Content-Language', document.documentElement.lang);
+  if (Utilities.apiTokenStorage.get()) {
+    requestHeaders.append(
+      'Authorization',
+      `Bearer ${Utilities.apiTokenStorage.get()}`
+    );
+  }
+  const response = await fetch(url as RequestInfo | string, {
     method,
-    body: Utilities.params.serializeParams(body, paramsOptions),
+    headers: requestHeaders,
+    // body: Utilities.params.serializeParams(body),
+    body: JSON.stringify(body),
     ...options,
   });
   const { status } = response;
@@ -76,8 +85,8 @@ async function post(
   throw new API_ERROR({ message: data.error, status, data });
 }
 
-async function put(url: any, body: any, options = {}, serializeOptions = {}) {
-  const data = await post(url, body, options, 'put', serializeOptions);
+async function put(url: any, body: any, options = {}) {
+  const data = await post(url, body, options, 'put');
   return data;
 }
 

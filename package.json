@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "simple template for react projects",
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/.bin/parcel public/index.html --no-cache --no-source-maps --lazy --port 3000 --dist-dir build --public-url /",
-    "build": "NODE_ENV=production ./node_modules/.bin/parcel build public/index.html --dist-dir build --no-source-maps --no-cache --public-url /app",
+    "start": "NODE_ENV=development REACT_APP_API='https://staging.t2me.net' ./node_modules/.bin/parcel public/index.html --no-cache --no-source-maps --lazy --port 3000 --dist-dir build --public-url /",
+    "build": "NODE_ENV=production REACT_APP_API='https://staging.t2me.net' ./node_modules/.bin/parcel build public/index.html --dist-dir build --no-source-maps --no-cache --public-url /app",
     "eslint": "eslint 'src/**/*{.js,.jsx}'",
     "eslint:fix": "eslint 'src/**/*{.css,.scss}' --fix",
     "stylelint": "stylelint 'src/**/*{.css,.scss}'",
@@ -23,6 +23,7 @@
     "@parcel/transformer-sass": "^2.7.0",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
+    "@types/react-modal": "^3.13.1",
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
@@ -54,13 +55,16 @@
     "typescript": "^4.6.4"
   },
   "dependencies": {
-    "nanoid": "^4.0.0",
+    "@hookform/devtools": "^4.3.1",
+    "@svgr/core": "^6.5.1",
     "classnames": "^2.3.1",
+    "nanoid": "^4.0.0",
     "object-to-formdata": "^4.4.2",
     "query-string": "^7.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.34.0",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.3.0"
   }
 }

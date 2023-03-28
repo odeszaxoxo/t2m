@@ -7,8 +7,17 @@ a {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100vh;
   margin: 0;
   padding: 0;
   color: $black;
-  background-color: $white;
+  font-family: $fontFamily;
+  background-color: $pink-400;
+
+  &--stuck {
+    overflow: hidden;
+  }
 }

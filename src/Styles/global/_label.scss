@@ -1,0 +1,7 @@
+label {
+  input:disabled + & {
+    cursor: not-allowed;
+  }
+
+  cursor: pointer;
+}

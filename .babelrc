@@ -1,21 +1,23 @@
 {
   "plugins": [
     "@babel/plugin-transform-modules-commonjs",
-    ["module-resolver", {
-      "root": ["./src"],
-      "extensions": [".js", ".jsx", ".ts", ".tsx"],
-      "alias": {
-        "Components": "./src/Components",
-        "Styles": "./src/Styles",
-        "Utilities": "./src/Utilities",
-        "Dictionary": "./src/Dictionary",
-        "Pages": "./src/Pages",
-        "Hooks": "./src/Hooks",
-        "Recoil": "./src/Recoil"
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "alias": {
+          "Components": "./src/Components",
+          "Styles": "./src/Styles",
+          "Utilities": "./src/Utilities",
+          "Dictionary": "./src/Dictionary",
+          "Pages": "./src/Pages",
+          "Hooks": "./src/Hooks",
+          "Recoil": "./src/Recoil",
+          "UI": "./src/Components/UI"
+        }
       }
-    }]
+    ]
   ],
-  "presets": [
-    "@babel/preset-typescript"
-  ]
+  "presets": ["@babel/preset-typescript"]
 }

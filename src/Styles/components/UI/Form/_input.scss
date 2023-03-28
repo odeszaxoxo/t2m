@@ -1,0 +1,50 @@
+.form__input-holder {
+  @extend %form__input;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &--error {
+    @extend %form__input--error;
+  }
+}
+
+.form__label {
+  %form__input & {
+    margin: 0 0 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  %form__input--error & {
+    color: $red;
+  }
+}
+
+.form__input {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 370px;
+  padding: 17px 30px 20px;
+  font-size: 16px;
+  line-height: 23px;
+  background: $white;
+  border: unset;
+  border: 1px solid transparent;
+  border-radius: 20px;
+
+  %form__input--error & {
+    border-color: $red;
+  }
+}
+
+.form__input-error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: $red;
+  font-size: 12px;
+}

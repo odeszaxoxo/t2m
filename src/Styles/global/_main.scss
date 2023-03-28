@@ -1,0 +1,22 @@
+main {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: $desktop-max-width;
+  margin: 0 auto;
+  padding: 78px 0;
+
+  &--gap {
+    flex-grow: 1;
+    margin-top: 70px;
+    padding: 0;
+  }
+
+  @include media-breakpoint-down(phone) {
+    flex-direction: column;
+    width: calc(100% - 40px);
+    min-height: calc(100vh - 50px);
+    margin: 0;
+    padding: 0 20px;
+  }
+}

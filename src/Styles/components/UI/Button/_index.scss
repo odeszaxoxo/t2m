@@ -1,0 +1,73 @@
+.button {
+  all: unset;
+  padding: 17px 40px 19px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  background-color: $pink;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: color $transition-default, background-color $transition-default;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+
+  &:focus {
+    outline: 2px solid $blue;
+  }
+
+  &--text {
+    all: unset;
+    color: $blue;
+    cursor: pointer;
+  }
+
+  &[type='submit'] {
+    margin-top: 20px;
+  }
+
+  &--blue {
+    color: $blue;
+    background-color: $white;
+
+    &:hover {
+      color: $white;
+      background-color: $blue;
+    }
+  }
+
+  &--pink {
+    color: $black;
+    background-color: $pink;
+
+    &:hover {
+      color: $white;
+      background-color: $pink;
+    }
+  }
+
+  %form--blue & {
+    &[type='submit'] {
+      color: $blue;
+      background-color: $white;
+
+      &:hover {
+        color: $white;
+        background-color: $blue;
+      }
+    }
+
+    @include media-breakpoint-down(phone) {
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+
+  %form--full-width & {
+    width: 100%;
+    padding-inline: 0;
+  }
+}

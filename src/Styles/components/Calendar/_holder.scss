@@ -1,0 +1,14 @@
+.calendar__holder {
+  display: flex;
+  transition: transform $transition-slow;
+  will-change: transform;
+
+  &--no-transition {
+    transition: unset;
+  }
+
+  @include media-breakpoint-down(phone) {
+    width: fit-content;
+    padding: 0 50%;
+  }
+}
