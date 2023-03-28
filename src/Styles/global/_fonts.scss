@@ -1,0 +1,49 @@
+/* Fonts */
+
+$fontVariants: (
+  100: 'thin',
+  100-italic: 'thinitalic',
+  200: 'extralight',
+  200-italic: 'extralightitalic',
+  300: 'light',
+  300-italic: 'lightitalic',
+  400: 'regular',
+  // 400-italic: 'regularitalic',
+  500: 'medium',
+  500-italic: 'mediumitalic',
+  700: 'bold',
+  700-italic: 'bolditalic',
+  bold: 'bold',
+  800: 'extrabold',
+  800-italic: 'extrabolditalic',
+  900: 'heavy',
+  900-italic: 'heavyitalic',
+);
+
+$fontVariantsTenor: (
+  400: 'regular',
+);
+
+$fontFormats: (
+  woff2: woff2,
+  woff: woff,
+);
+
+$fontFamily: 'TT Norms', 'Verdana', 'Geneva', sans-serif;
+
+@include font-face(
+  'TT Norms',
+  ttnorms,
+  $fontVariants,
+  $fontFormats,
+  true,
+  true
+);
+@include font-face(
+  'Tenor Sans',
+  tenorsans,
+  $fontVariantsTenor,
+  $fontFormats,
+  true,
+  false
+);

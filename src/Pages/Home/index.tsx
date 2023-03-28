@@ -1,6 +1,14 @@
+import Navigation from 'Components/Navigation';
+import { Outlet } from 'react-router-dom';
+import useResize from 'Hooks/useResize';
 import React from 'react';
-import Section from 'Components/UI/Section';
 
-export default function Home() {
-  return <Section>home</Section>;
+export default function HomePage() {
+  const { isPhone } = useResize();
+  return (
+    <>
+      {!isPhone && <Navigation />}
+      <Outlet />
+    </>
+  );
 }

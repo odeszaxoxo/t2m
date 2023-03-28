@@ -1,0 +1,92 @@
+.timetable {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 0;
+}
+
+.timetable__holder {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0 0;
+}
+
+.timetable__item {
+  all: unset;
+  width: 108px;
+  height: 40px;
+  margin: 0 6px 6px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+  background-color: $white;
+  border-radius: 20px;
+  cursor: pointer;
+
+  &:nth-child(5n) {
+    margin-right: 0;
+  }
+
+  input:checked + & {
+    background: $green;
+  }
+
+  &-active {
+    background: $green;
+  }
+
+  @include media-breakpoint-down(phone) {
+    box-sizing: border-box;
+    width: 61px;
+    height: 58px;
+    margin: 0 5px 5px 0;
+    padding: 12px;
+    line-height: 11px;
+
+    &:nth-child(5n) {
+      margin-right: 5px;
+    }
+  }
+}
+
+.timetable__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 175px;
+  height: 60px;
+  color: $white;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: $fontFamily;
+  background: $blue;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+
+  @include media-breakpoint-down(phone) {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.timetable__accept {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+
+  span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  @include media-breakpoint-down(phone) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+  }
+}

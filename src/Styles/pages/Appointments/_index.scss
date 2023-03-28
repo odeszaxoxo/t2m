@@ -1,0 +1,194 @@
+.appointments {
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 30px 30px;
+  background-color: $gray-100;
+  border-radius: 20px;
+
+  &--in-process {
+    @extend %appointment-is-process;
+  }
+
+  &--finished {
+    @extend %appointment-is-finished;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 24px;
+
+    @include media-breakpoint-down(tablet) {
+      font-size: 16px;
+    }
+  }
+
+  & > button {
+    box-sizing: border-box;
+    width: 244px;
+    margin: 0 0 0 auto;
+
+    @include media-breakpoint-down(tablet) {
+      width: 100%;
+      margin: 20px 0 0;
+      color: $white;
+      font-size: 16px;
+      background-color: $blue;
+    }
+  }
+
+  & + & {
+    margin: 15px 0 0;
+  }
+
+  @include media-breakpoint-down(tablet) {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+}
+
+.appointment__comment-holder {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 25px 0 0;
+  padding: 20px 30px;
+  background-color: $white;
+  border-radius: 20px;
+
+  > button {
+    margin: 0 0 0 auto;
+
+    @include media-breakpoint-down(tablet) {
+      margin: 7px 0 0;
+      padding: 0;
+      color: $blue;
+      font-weight: 500;
+      text-decoration: underline;
+      all: inherit;
+    }
+  }
+
+  time {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 23px;
+  }
+
+  @include media-breakpoint-down(tablet) {
+    margin: 15px 0 0;
+  }
+}
+
+.appointment__comment-author {
+  font-weight: bold;
+
+  @include media-breakpoint-down(tablet) {
+    font-size: 14px;
+  }
+}
+
+.appointment__comment-text {
+  margin: 0 0 10px;
+}
+
+.appointment__comment {
+  font-weight: 400;
+
+  @include media-breakpoint-down(tablet) {
+    font-size: 14px;
+  }
+}
+
+.appointment__timer {
+  flex-shrink: 1;
+  max-width: calc(100% - 244px);
+  margin: 10px 0 0;
+
+  > span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+
+    @include media-breakpoint-down(tablet) {
+      display: inline-block;
+      margin-top: 7px;
+      font-size: 14px;
+    }
+  }
+
+  %appointment-is-process & {
+    & > span {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+
+      &::before {
+        position: relative;
+        display: block;
+        width: 11px;
+        height: 11px;
+        margin: 0 10px 0 0;
+        background: $green;
+        border-radius: 50%;
+        animation: blink 1s infinite alternate;
+        content: '';
+      }
+    }
+  }
+
+  %appointment-is-finished & {
+    & > span {
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        position: relative;
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        margin: 0 10px 0 0;
+        background: $gray-300;
+        border-radius: 50%;
+        content: '';
+      }
+    }
+  }
+
+  @include media-breakpoint-down(tablet) {
+    align-self: flex-start;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+.approvement {
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    > button {
+      &:last-child {
+        margin-left: 20px;
+      }
+    }
+
+    @include media-breakpoint-down(phone) {
+      flex-direction: column;
+
+      > button {
+        &:last-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

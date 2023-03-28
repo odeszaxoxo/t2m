@@ -1,0 +1,9 @@
+.form--blue {
+  width: 100%;
+
+  @extend %form--blue;
+}
+
+.form--full-width {
+  @extend %form--full-width;
+}

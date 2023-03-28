@@ -1,0 +1,76 @@
+.signin__section {
+  display: flex;
+}
+
+.signin__form-holder {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: center;
+  width: 370px;
+
+  @include media-breakpoint-down(phone) {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 30px;
+  }
+}
+
+.signin__image-holder {
+  position: relative;
+  flex-shrink: 0;
+  align-self: center;
+  margin-left: 105px;
+
+  @include media-breakpoint-down(phone) {
+    z-index: -2;
+    order: -1;
+    width: 100%;
+    margin: -70px 0 -80px;
+    overflow: hidden;
+
+    svg {
+      width: 416px;
+      height: 303px;
+    }
+  }
+}
+
+.signin__note {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  line-height: 1.6;
+
+  @include media-breakpoint-down(phone) {
+    position: relative;
+    top: unset;
+    margin: auto 0 20px;
+    font-size: 12px;
+    line-height: 2;
+    text-align: center;
+  }
+
+  a {
+    color: #000;
+
+    &:focus,
+    &:visited {
+      color: #000;
+    }
+  }
+}
+
+.signin__token-helper {
+  align-self: flex-end;
+  margin-top: 20px;
+}
+
+.signin__title {
+  font-size: 24px;
+
+  @include media-breakpoint-down(phone) {
+    font-size: 18px;
+  }
+}

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   insideRef?: React.Ref<HTMLButtonElement>;
+  variant?: boolean;
+  color?: string;
 }
 
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -16,9 +18,15 @@ export default function Button({
   url,
   children,
   insideRef,
+  variant,
+  color,
   ...rest
 }: ButtonProps & LinkProps) {
-  const classNames = cn('button', className);
+  const classNames = cn('button', className, {
+    'button--text': variant,
+    'button--blue': color === 'blue',
+    'button--pink': color === 'pink',
+  });
 
   if (url) {
     return (

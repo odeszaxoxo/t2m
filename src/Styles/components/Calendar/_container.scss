@@ -1,0 +1,18 @@
+.calendar__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+
+  @include media-breakpoint-down(phone) {
+    box-sizing: border-box;
+    overflow-x: scroll;
+
+    // padding: 0 0 0 50px;
+    scroll-snap-type: x mandatory;
+  }
+}
+
+.calendar__container::-webkit-scrollbar {
+  display: none;
+}

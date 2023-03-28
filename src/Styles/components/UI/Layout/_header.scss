@@ -1,0 +1,51 @@
+.header {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $desktop-max-width;
+  height: $header-height-phone;
+  margin: 20px auto 0;
+
+  & > *:only-child {
+    margin: auto;
+  }
+
+  @include media-breakpoint-down(phone) {
+    width: calc(100% - 40px);
+    height: $header-height-phone;
+    margin: 0;
+    padding: 0 20px;
+  }
+
+  &__modal {
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0 55px;
+    }
+  }
+
+  &__button {
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+}
+
+.header__user-control {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 63px;
+  font-size: 16px;
+  line-height: 23px;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}

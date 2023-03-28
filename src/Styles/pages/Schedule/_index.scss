@@ -1,0 +1,16 @@
+@import './timetable';
+@import './apply';
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  max-width: 662px;
+  margin: 0 0 0 108px;
+
+  @include media-breakpoint-down(phone) {
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 8px;
+  }
+}

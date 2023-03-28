@@ -1,0 +1,16 @@
+.calendar {
+  position: relative;
+  left: -55px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 10px 0 0;
+  padding: 0 55px;
+
+  @include media-breakpoint-down(phone) {
+    left: 0;
+    width: 100vw;
+    margin-top: 20px;
+    margin-left: -30px;
+    padding: 0;
+  }
+}

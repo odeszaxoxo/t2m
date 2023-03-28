@@ -1,0 +1,56 @@
+.calendar__navigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  transform: translateY(-50%);
+
+  @include media-breakpoint-down(phone) {
+    visibility: hidden;
+  }
+}
+
+$calendar-navigation-button-size: 40px;
+
+%calendar-navigation-button {
+  position: relative;
+  width: $calendar-navigation-button-size;
+  height: $calendar-navigation-button-size;
+  background-color: $white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color $transition-default;
+  all: unset;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    background-color: $gray-100;
+  }
+
+  &:disabled {
+    display: none;
+  }
+}
+
+.calendar__navigation-next {
+  @extend %calendar-navigation-button;
+
+  margin: 0 0 0 auto;
+}
+
+.calendar__navigation-prev {
+  @extend %calendar-navigation-button;
+
+  svg {
+    transform: translate(-50%, -50%) scale(-1);
+  }
+}

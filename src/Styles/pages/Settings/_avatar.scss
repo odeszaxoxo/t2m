@@ -1,0 +1,22 @@
+.avatar {
+  margin: 30px 0 0;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.avatar__holder {
+  margin: 10px 0 0;
+}
+
+.avatar__label {
+  margin: 0 20px 0 0;
+
+  input:checked + & circle {
+    fill: $blue;
+  }
+
+  input:checked + & path {
+    fill: $white;
+    stroke: $white;
+  }
+}

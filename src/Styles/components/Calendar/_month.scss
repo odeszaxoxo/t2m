@@ -1,0 +1,17 @@
+.calendar__month {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  box-sizing: border-box;
+  width: 264px;
+  margin: 0 20px 0 0;
+  padding: 30px 30px 60px;
+  background-color: $white;
+  border-radius: 19px;
+
+  @include media-breakpoint-down(phone) {
+    margin: 0 10px 0 0;
+    scroll-snap-align: center;
+  }
+}
